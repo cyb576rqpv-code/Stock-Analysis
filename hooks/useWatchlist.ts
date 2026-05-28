@@ -31,6 +31,8 @@ export function useWatchlist() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    // Reading localStorage after hydration avoids server/client markup mismatches.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setWatchlist(safeRead());
     setIsLoaded(true);
   }, []);

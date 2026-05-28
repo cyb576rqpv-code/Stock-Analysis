@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { AlertTriangle, Clock, Layers, LineChart, Radar, ShieldAlert, TrendingUp } from "lucide-react";
+import { AlertTriangle, Clock, Layers, Radar, ShieldAlert, TrendingUp } from "lucide-react";
 import { EmptyState } from "@/components/EmptyState";
 import { StockCard } from "@/components/StockCard";
 import { formatDateTime } from "@/lib/format";

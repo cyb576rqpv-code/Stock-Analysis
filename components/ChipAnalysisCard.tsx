@@ -3,7 +3,7 @@ import type { ChipAnalysis } from "@/types/stock";
 import { ScoreBar } from "@/components/ScoreBar";
 
 export function ChipAnalysisCard({ data }: { data: ChipAnalysis }) {
-  const metrics = [
+  const metrics: [string, number | undefined][] = [
     ["外資近 5 日", data.foreignInvestorNetBuy5d],
     ["投信近 5 日", data.investmentTrustNetBuy5d],
     ["自營商近 5 日", data.dealerNetBuy5d],
@@ -23,7 +23,7 @@ export function ChipAnalysisCard({ data }: { data: ChipAnalysis }) {
           <div key={label} className="rounded-2xl bg-slate-950/60 p-3">
             <p className="text-xs text-slate-500">{label}</p>
             <p className={(value ?? 0) >= 0 ? "mt-1 font-bold text-emerald-200" : "mt-1 font-bold text-rose-200"}>
-              {formatCompact(value as number | undefined)}
+              {formatCompact(value)}
             </p>
           </div>
         ))}
